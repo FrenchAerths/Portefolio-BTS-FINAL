@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio de Thomas Perucho</title>
+
+    <style>
+        /* ===== Style général ===== */
+        body {
+            margin: 0;
+            font-family: Verdana, Geneva, sans-serif;
+            background-color: #f2f2f2;
+            color: #333333;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: Georgia, "Times New Roman", serif;
+        }
+
+        h2 {
+            color: #2c3e50;
+            text-align: center;
+            font-size: 28px;
+            margin-top: 0;
+            margin-bottom: 25px;
+        }
+
+        a {
+            color: #2980b9;
+        }
+
+        /* ===== Menu ===== */
+        .menu {
+            background-color: #2c3e50;
+            text-align: center;
+            padding: 12px 0;
+            position: sticky;
+            top: 0;
+        }
+
+        .menu a {
+            color: white;
+            text-decoration: none;
+            margin: 0 14px;
+            font-size: 15px;
+        }
+
+        .menu a:hover {
+            color: #f1c40f;
+        }
+
+        /* ===== Bandeau du haut ===== */
+        .bandeau {
+            background-color: #34495e;
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .bandeau h1 {
+            font-size: 46px;
+            margin: 0 0 10px 0;
+        }
+
+        .bandeau p {
+            max-width: 700px;
+            margin: 10px auto;
+        }
+
+        .devise {
+            font-style: italic;
+            color: #f1c40f;
+            font-size: 18px;
+        }
+
+        .bouton {
+            display: inline-block;
+            background-color: #2980b9;
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            margin: 6px;
+            font-family: Verdana, Geneva, sans-serif;
+            font-size: 14px;
+            text-decoration: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .bouton:hover {
+            background-color: #1c5d85;
+        }
+
+        /* ===== Sections ===== */
+        section {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .ligne {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .boite {
+            background-color: white;
+            border: 1px solid #cccccc;
+            border-top: 4px solid #2980b9;
+            padding: 20px;
+            flex: 1;
+            min-width: 250px;
+            box-shadow: 2px 2px 5px #cccccc;
+        }
+
+        .boite h3 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+
+        .etiquette {
+            display: inline-block;
+            background-color: #dfe9f3;
+            padding: 3px 9px;
+            margin: 3px 2px;
+            border-radius: 4px;
+            font-size: 13px;
+        }
+
+        .annee {
+            color: #2980b9;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .petit {
+            font-size: 13px;
+            color: #777777;
+        }
+
+        /* ===== CV ===== */
+        .cv {
+            display: flex;
+            background-color: white;
+            border: 1px solid #999999;
+            box-shadow: 2px 2px 8px #bbbbbb;
+        }
+
+        .cv-gauche {
+            background-color: #2c3e50;
+            color: white;
+            width: 32%;
+            padding: 25px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .cv-gauche h3 {
+            font-size: 16px;
+            color: #f1c40f;
+            border-bottom: 1px solid #7f8c8d;
+            padding-bottom: 4px;
+            margin: 0 0 8px 0;
+        }
+
+        .cv-gauche p {
+            margin: 0 0 4px 0;
+            font-size: 14px;
+            word-break: break-word;
+        }
+
+        .cv-gauche ul {
+            margin: 0;
+            padding-left: 18px;
+            font-size: 14px;
+        }
+
+        .cv-droite {
+            width: 68%;
+            padding: 25px 28px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .cv-droite h1 {
+            margin: 0;
+            font-size: 36px;
+            color: #2c3e50;
+        }
+
+        .cv-droite .metier {
+            color: #2980b9;
+            font-weight: bold;
+            margin: 4px 0 0 0;
+        }
+
+        .cv-droite h3 {
+            font-size: 17px;
+            color: #2c3e50;
+            border-bottom: 2px solid #2980b9;
+            padding-bottom: 3px;
+            margin: 0 0 8px 0;
+        }
+
+        .cv-droite p {
+            margin: 0 0 6px 0;
+            font-size: 14px;
+        }
+
+        /* ===== Lettre ===== */
+        .lettre {
+            background-color: white;
+            border: 1px solid #cccccc;
+            border-top: 4px solid #2980b9;
+            box-shadow: 2px 2px 5px #cccccc;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .lettre-haut {
+            background-color: #2c3e50;
+            color: white;
+            padding: 25px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .lettre-haut h3 {
+            font-size: 30px;
+            margin: 0;
+        }
+
+        .lettre-haut .formation {
+            color: #f1c40f;
+            font-size: 14px;
+            margin: 4px 0 0 0;
+        }
+
+        .lettre-haut .coordonnees {
+            text-align: right;
+            font-size: 14px;
+        }
+
+        .lettre-corps {
+            padding: 30px 40px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .lettre p {
+            margin: 0 0 10px 0;
+            text-align: justify;
+        }
+
+        .infos-lettre {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .destinataire {
+            border-left: 4px solid #2980b9;
+            padding-left: 12px;
+        }
+
+        .destinataire strong {
+            color: #2c3e50;
+        }
+
+        .date {
+            text-align: right;
+            color: #777777;
+        }
+
+        .objet {
+            font-weight: bold;
+            color: #2c3e50;
+            background-color: #dfe9f3;
+            padding: 8px 12px;
+            border-radius: 4px;
+        }
+
+        .signature {
+            color: #2c3e50;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 18px;
+        }
+
+        /* ===== Contact et pied de page ===== */
+        .contact {
+            text-align: center;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 13px;
+        }
+
+        /* ===== Petits écrans ===== */
+        @media (max-width: 700px) {
+            .bandeau h1 {
+                font-size: 32px;
+            }
+
+            .cv {
+                flex-direction: column;
+            }
+
+            .cv-gauche,
+            .cv-droite {
+                width: auto;
+            }
+
+            .lettre {
+                padding: 20px;
+            }
+
+            .destinataire,
+            .date {
+                text-align: left;
+            }
+        }
+
+        /* ===== Impression ===== */
+        @media print {
+            @page {
+                size: A4;
+                margin: 0;
+            }
+
+            body {
+                background-color: white;
+            }
+
+            * {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            /* on cache tout sauf le CV (ou la lettre) */
+            .menu,
+            .bandeau,
+            footer,
+            .pas-imprimer,
+            #competences,
+            #parcours,
+            #experiences,
+            #projets,
+            #contact {
+                display: none !important;
+            }
+
+            section {
+                padding: 0;
+                max-width: none;
+                margin: 0;
+            }
+
+            #lettre {
+                display: none !important;
+            }
+
+            body.imprime-lettre #cv {
+                display: none !important;
+            }
+
+            body.imprime-lettre #lettre {
+                display: block !important;
+            }
+
+            .cv {
+                width: 210mm;
+                height: 296mm;
+                border: none;
+                box-shadow: none;
+            }
+
+            .cv-gauche {
+                padding: 12mm 7mm;
+            }
+
+            .cv-gauche h3 {
+                font-size: 11pt;
+            }
+
+            .cv-gauche p,
+            .cv-gauche ul {
+                font-size: 10pt;
+            }
+
+            .cv-droite {
+                padding: 12mm 10mm;
+            }
+
+            .cv-droite h1 {
+                font-size: 28pt;
+            }
+
+            .cv-droite h3 {
+                font-size: 12pt;
+            }
+
+            .cv-droite p {
+                font-size: 10.5pt;
+            }
+
+            .lettre {
+                width: 210mm;
+                height: 296mm;
+                border: none;
+                border-top: 4px solid #2980b9;
+                box-shadow: none;
+            }
+
+            .lettre-haut {
+                padding: 12mm 18mm;
+            }
+
+            .lettre-haut h3 {
+                font-size: 24pt;
+            }
+
+            .lettre-corps {
+                padding: 12mm 18mm 14mm 18mm;
+            }
+
+            .lettre p {
+                font-size: 10.5pt;
+                line-height: 1.5;
+            }
+
+            .destinataire,
+            .date {
+                font-size: 10pt;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Menu -->
+    <div class="menu">
+        <a href="#accueil">Accueil</a>
+        <a href="#competences">Compétences</a>
+        <a href="#parcours">Parcours</a>
+        <a href="#experiences">Expériences</a>
+        <a href="#cv">Mon CV</a>
+        <a href="#lettre">Lettre</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <!-- Accueil -->
+    <div class="bandeau" id="accueil">
+        <h1>Thomas Perucho</h1>
+        <p>Étudiant en BTS Services Informatiques aux Organisations, option SLAM (Solutions Logicielles et Applications Métiers) · Lycée Saint Marc</p>
+        <p>Je m’intéresse à la création, au montage et à la réparation d’ordinateurs, ainsi qu’au développement informatique.</p>
+        <p class="devise">« Apprendre, développer, réussir »</p>
+        <p><strong>Objectif :</strong> développer mes compétences informatiques et acquérir de l’expérience professionnelle.</p>
+        <p><strong>Centres d’intérêt :</strong> Jeux vidéo · Musique · Sport · Automobile</p>
+        <a class="bouton" href="#cv">Découvrir mon CV</a>
+        <a class="bouton" href="#contact">Me contacter</a>
+        <button class="bouton" onclick="imprimer('cv')">Imprimer / enregistrer en PDF</button>
+    </div>
+
+    <!-- Compétences -->
+    <section id="competences">
+        <h2>Mes compétences</h2>
+        <div class="ligne">
+            <div class="boite">
+                <h3>Informatique</h3>
+                <span class="etiquette">SQL</span>
+                <span class="etiquette">Python</span>
+                <span class="etiquette">Montage de PC</span>
+                <span class="etiquette">Démontage de PC</span>
+                <span class="etiquette">Réparation</span>
+            </div>
+            <div class="boite">
+                <h3>Savoir-être</h3>
+                <span class="etiquette">Autonomie</span>
+                <span class="etiquette">Travail en équipe</span>
+                <span class="etiquette">Sens des responsabilités</span>
+                <span class="etiquette">Discipline</span>
+            </div>
+            <div class="boite">
+                <h3>Langues</h3>
+                <p>Anglais : niveau indiqué dans le CV</p>
+                <p>Espagnol : niveau à préciser</p>
+                <p class="petit">Les niveaux de langue ne sont pas détaillés dans le CV PDF retrouvé.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Parcours -->
+    <section id="parcours">
+        <h2>Mon parcours</h2>
+        <div class="ligne">
+            <div class="boite">
+                <div class="annee">2026 – 2028</div>
+                <h3>BTS SIO — option SLAM</h3>
+                <p class="petit">Lycée Saint Marc</p>
+                <p>Formation orientée vers les solutions logicielles et les applications métiers.</p>
+            </div>
+            <div class="boite">
+                <div class="annee">2025 – 2026</div>
+                <h3>Baccalauréat STMG</h3>
+                <p class="petit">Lycée Léonard de Vinci</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expériences -->
+    <section id="experiences">
+        <h2>Mes expériences</h2>
+        <div class="ligne">
+            <div class="boite">
+                <div class="annee">2021 · Stage</div>
+                <h3>Gendarmerie de Bourgoin-Jallieu</h3>
+                <p>Découverte du milieu professionnel. Le CV mentionne notamment la discipline et une compétence de tir parmi les acquis du stage.</p>
+            </div>
+            <div class="boite">
+                <div class="annee">Stage</div>
+                <h3>École primaire Les Marronniers</h3>
+                <p>Expérience autour de l’encadrement d’un groupe, du sens des responsabilités et du respect des consignes.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projets -->
+    <section id="projets">
+        <h2>Projets et intérêts</h2>
+        <div class="ligne">
+            <div class="boite">
+                <h3>Création et réparation de PC</h3>
+                <p>Mon intérêt pour l’informatique se traduit notamment par le montage, le démontage et la réparation d’ordinateurs.</p>
+            </div>
+            <div class="boite">
+                <h3>Développement informatique</h3>
+                <p>Dans le cadre de mon BTS SIO option SLAM, je souhaite progresser en programmation et dans la conception d’applications.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CV -->
+    <section id="cv">
+        <div class="pas-imprimer">
+            <h2>Mon CV</h2>
+            <p style="text-align:center">
+                <button class="bouton" onclick="imprimer('cv')">Imprimer / enregistrer en PDF</button>
+            </p>
+        </div>
+
+        <div class="cv">
+            <div class="cv-gauche">
+                <div>
+                    <h3>Contact</h3>
+                    <p>thomas9.perucho@gmail.com</p>
+                    <p>06 10 40 63 39</p>
+                    <p>France</p>
+                </div>
+                <div>
+                    <h3>Compétences</h3>
+                    <ul>
+                        <li>SQL et Python</li>
+                        <li>Montage et démontage de PC</li>
+                        <li>Réparation informatique</li>
+                        <li>Présentation</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Savoir-être</h3>
+                    <ul>
+                        <li>Autonomie</li>
+                        <li>Travail en équipe</li>
+                        <li>Sens des responsabilités</li>
+                        <li>Discipline</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Langues</h3>
+                    <ul>
+                        <li>Anglais</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Loisirs</h3>
+                    <ul>
+                        <li>Musique</li>
+                        <li>Jeux vidéo</li>
+                        <li>Sport</li>
+                        <li>Automobile</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="cv-droite">
+                <div>
+                    <h1>Thomas Perucho</h1>
+                    <p class="metier">Étudiant en BTS SIO · option SLAM</p>
+                </div>
+                <div>
+                    <h3>Profil</h3>
+                    <p>J’aime la création de PC et la réparation. Je souhaite développer mes compétences et acquérir de l’expérience dans le domaine informatique, en m’investissant dans des projets concrets autour du développement et des applications métiers.</p>
+                </div>
+                <div>
+                    <h3>Formation</h3>
+                    <p><strong>2026 – 2028 : BTS SIO — option SLAM</strong><br>Lycée Saint Marc · Solutions logicielles et applications métiers</p>
+                    <p><strong>2025 – 2026 : Baccalauréat STMG</strong><br>Lycée Léonard de Vinci</p>
+                </div>
+                <div>
+                    <h3>Expériences</h3>
+                    <p><strong>2021 : Stage en gendarmerie</strong><br>Gendarmerie de Bourgoin-Jallieu · découverte du milieu professionnel, discipline.</p>
+                    <p><strong>Stage en école primaire</strong><br>École primaire Les Marronniers · encadrement d’un groupe, sens des responsabilités, respect des consignes.</p>
+                </div>
+                <div>
+                    <h3>Centres d’intérêt informatiques</h3>
+                    <p><strong>Création et réparation de PC</strong><br>Montage, démontage et réparation d’ordinateurs.</p>
+                    <p><strong>Développement informatique</strong><br>Programmation et conception d’applications dans le cadre du BTS SIO option SLAM.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lettre de motivation -->
+    <section id="lettre">
+        <div class="pas-imprimer">
+            <h2>Ma lettre de motivation</h2>
+            <p style="text-align:center">
+                <button class="bouton" onclick="imprimer('lettre')">Imprimer la lettre / enregistrer en PDF</button>
+            </p>
+        </div>
+
+        <div class="lettre">
+            <div class="lettre-haut">
+                <div>
+                    <h3>Thomas Perucho</h3>
+                    <p class="formation">Étudiant en BTS SIO · option SLAM</p>
+                </div>
+                <div class="coordonnees">
+                    thomas9.perucho@gmail.com<br>
+                    06 10 40 63 39
+                </div>
+            </div>
+
+            <div class="lettre-corps">
+                <div class="infos-lettre">
+                    <div class="destinataire">
+                        <strong>Pge Informatique</strong><br>
+                        564 rue de la République<br>
+                        38290 La Verpillière
+                    </div>
+                    <div class="date">Saint-Quentin-Fallavier, le 20 octobre 2026</div>
+                </div>
+
+                <p class="objet">Objet : Candidature pour un stage</p>
+
+                <p>Madame, Monsieur,</p>
+
+                <p>Actuellement étudiant en BTS Services Informatiques aux Organisations (SIO), option Solutions Logicielles et Applications Métiers (SLAM) au Lycée Saint Marc, je me permets de vous adresser ma candidature pour un stage au sein de votre entreprise. Votre structure m'intéresse particulièrement pour son domaine d'activité et ses projets, et je souhaite aujourd'hui mettre mes compétences à votre service.</p>
+
+                <p>Au cours de ma formation, je développe des connaissances en programmation, en analyse et conception d'applications, ainsi qu'en gestion de bases de données. J'ai également effectué des stages qui m'ont permis de découvrir le monde professionnel, de renforcer ma rigueur, mon sens des responsabilités et ma capacité d'adaptation. Je suis curieux, organisé et à l'écoute, avec un bon esprit d'équipe. J'ai parfois tendance à vouloir approfondir un sujet plus que nécessaire ; je travaille donc à mieux gérer mon temps et mes priorités.</p>
+
+                <p>Je suis convaincu que ma motivation, mon sérieux et mes compétences techniques me permettront de contribuer aux missions qui me seront confiées. Je saurai m'investir dans vos projets tout en continuant à développer mes connaissances. Je reste à votre disposition pour un entretien qui me permettrait de vous présenter plus en détail ma motivation et mon profil.</p>
+
+                <p>Je vous prie d'agréer, Madame, Monsieur, l'expression de mes salutations distinguées.</p>
+
+                <p class="signature">Thomas Perucho</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+        <h2>Contact</h2>
+        <div class="boite contact">
+            <p>Pour échanger au sujet de mon parcours ou d’une opportunité de stage, vous pouvez me contacter par e-mail ou par téléphone.</p>
+            <p>E-mail : <a href="mailto:thomas9.perucho@gmail.com">thomas9.perucho@gmail.com</a></p>
+            <p>Téléphone : <a href="tel:+33610406339">06 10 40 63 39</a></p>
+        </div>
+    </section>
+
+    <footer>
+        Portfolio de Thomas Perucho · BTS SIO option SLAM
+    </footer>
+
+    <script>
+        // imprime le CV ou la lettre
+        function imprimer(quoi) {
+            if (quoi == 'lettre') {
+                document.body.classList.add('imprime-lettre');
+            }
+            window.print();
+        }
+
+        // après l'impression on remet comme avant
+        window.onafterprint = function () {
+            document.body.classList.remove('imprime-lettre');
+        };
+    </script>
+
+</body>
+</html>
